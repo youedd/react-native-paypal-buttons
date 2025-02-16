@@ -1,3 +1,5 @@
-export function multiply(a: number, b: number): number {
-  return a * b;
-}
+export * from './types';
+export * from './PaymentButton';
+export * from './PayPalButton';
+export * from './PayPalPayLaterButton';
+export * from './PayPalCreditButton';
