@@ -38,7 +38,9 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "paypal",
+    "buttons"
   ],
   "repository": {
     "type": "git",
