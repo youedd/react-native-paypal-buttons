@@ -8,7 +8,7 @@ React native implementation of PayPal Buttons
 ## Table of Contents
 
 - [Installation](#installation)
-- [Setup](#setup)
+  - [Setup](#setup)
 - [Usage](#usage)
 - [Props](#props)
   - [Common Props](#common-props)
@@ -24,54 +24,48 @@ React native implementation of PayPal Buttons
 npm install react-native-paypal-buttons
 ```
 
-## Setup
+### Setup
 
-This package uses `PayPalOpen-Regular` for the button labels.
+
+This package uses `PayPalOpen-Regular` font for the button labels.
 
 <details>
 <summary>Bare React Native</summary>
 
-#### iOS
-
-Edit `Info.plist` and add a property called Fonts provided by application (or UIAppFonts if Xcode autocomplete is not working):
-```
-<key>UIAppFonts</key>
-<array>
-  <string>PayPalOpen-Regular.otf</string>
-</array>
-```
-
-#### Android
-
-Copy `node_modules/react-native-paypal-buttons/src/assets/fonts/PayPalOpen-Regular.otf` and paste it into `android/app/src/main/assets/fonts` (ensure the folder name is lowercase, i.e., fonts).
-
+1. Update `react-native.config.js`
+    ````
+    ...
+      assets: [
+        "./node_modules/react-native-paypal-buttons/src/assets/fonts"
+      ]
+    ````
+2. Run command 
+    ````
+    npx react-native-asset
+    ````
 </details>
 
 <details>
 <summary>Expo</summary>
 
-To use PayPal buttons with the correct font in an Expo project, follow these steps:
-
 1. Install the `expo-font` package:
     ```sh
     expo install expo-font
     ```
-2. Load the font in your app:
+2. Update expo config
     ```tsx
-    import { useFonts } from 'expo-font';
-    import { PayPalButton } from 'react-native-paypal-buttons';
-
-    const MyComponent = () => {
-      const [fontsLoaded] = useFonts({
-        'PayPalOpen-Regular': require('../node_modules/react-native-paypal-buttons/src/assets/fonts/PayPalOpen-Regular.otf'),
-      });
-
-      if (!fontsLoaded) {
-        return null;
+    {
+      "expo": {
+        "plugins": [
+          [
+            "expo-font",
+            {
+              "fonts": ["./node_modules/react-native-paypal-buttons/src/assets/fonts/PayPalOpen-Regular.otf"]
+            }
+          ]
+        ]
       }
-
-      return <PayPalButton />;
-    };
+    }
     ```
 
 </details>
