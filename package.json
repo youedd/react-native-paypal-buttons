@@ -1,6 +1,6 @@
 {
   "name": "react-native-paypal-buttons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React native implementation of PayPal Buttons",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
